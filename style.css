@@ -1,0 +1,207 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "shabnam", sans-serif;
+  line-height: 1.5;
+  background: #222;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "shabnam", sans-serif;
+}
+
+@font-face {
+  font-family: "shabnam";
+  src: url("./src/font/Shabnam.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-size: 200% 200%;
+  animation: gradientMove 10s ease infinite;
+  gap: 20px;
+  width: 400px;
+  color: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: gradientMove 30s ease infinite;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.weather-icon {
+  width: 170px;
+  margin-top: 20px;
+  transition: transform 0.5s;
+}
+.weather-icon.animate {
+  transform: rotate(360deg);
+}
+
+.temp,
+.city,
+.desc,
+.humidity,
+.wind {
+  transition: all 0.5s ease-in-out;
+}
+
+.details .info p {
+  font-size: 16px;
+}
+
+.search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.search input {
+  text-align: right;
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  width: 80px;
+  height: 60px;
+}
+.search button {
+  width: 60px;
+  padding-top: 7px;
+  height: 60px;
+  border: none;
+  border-radius: 100%;
+  background: #fff;
+  color: #764ba2;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+.search button i {
+  font-size: 24px;
+  line-height: 10px;
+}
+.weather .weather-icon {
+  width: 170px;
+  margin-top: 30px;
+}
+.weather h1 {
+  font-size: 80px;
+  margin: 10px 0;
+  font-weight: 500;
+}
+.weather h2 {
+  font-size: 45px;
+  font-weight: 400;
+  margin-top: -10px;
+}
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+.col {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+.col img {
+  width: 40px;
+  height: 40px;
+  display: block;
+  text-align: left;
+}
+.humidity,
+.wind {
+  font-size: 28px;
+  line-height: 30px;
+}
+
+.weather p {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.weather .humidity {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.details .info {
+  text-align: left;
+}
+
+.temp,
+.city,
+.desc,
+.humidity,
+.wind,
+.weather-icon {
+  transition: all 1s ease-in-out;
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.fade-in {
+  opacity: 1;
+  transform: scale(1);
+}
